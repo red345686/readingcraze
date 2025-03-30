@@ -54,6 +54,20 @@
         </div>
         <div class="tooltip-info">Hover over words to see definitions</div>
         
+        <label><input type="checkbox" id="ttsEnabled"> Text-to-Speech</label>
+        <div class="tts-options">
+            <label>Voice:
+                <select id="ttsVoice">
+                    <option value="default">Default</option>
+                    <!-- Will be populated with available voices -->
+                </select>
+            </label>
+            <label>Rate: <input type="range" id="ttsRate" min="0.5" max="2" step="0.1" value="1.0"> <span id="ttsRateValue">1.0</span></label>
+            <label>Pitch: <input type="range" id="ttsPitch" min="0.5" max="2" step="0.1" value="1.0"> <span id="ttsPitchValue">1.0</span></label>
+            <label>Volume: <input type="range" id="ttsVolume" min="0" max="1" step="0.1" value="1.0"> <span id="ttsVolumeValue">1.0</span></label>
+        </div>
+        <div class="tooltip-info">Use the floating player to listen to the page content</div>
+        
         <button id="resetProgress">Reset Reading Progress</button>
     </div>
     

@@ -131,3 +131,26 @@ button:hover {
 .radio-label input[type="radio"] {
     margin-right: 4px;
 }
+
+.tts-options {
+    margin: 0 0 5px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tts-options label {
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+.tts-options select {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 3px;
+}
+
+.tts-options input[type="range"] {
+    width: 120px;
+    margin: 0 8px;
+}

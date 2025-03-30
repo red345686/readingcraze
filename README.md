@@ -10,6 +10,7 @@ A Chrome extension that enhances your web novel reading experience with advanced
 - **Auto-Scroll**: Hands-free reading with adjustable scroll speed
 - **Global Styling**: Changes apply to the entire page for a consistent reading experience
 - **Dictionary Lookup**: Hover over unfamiliar words to see definitions (uses the Free Dictionary API)
+- **Text-to-Speech**: Listen to web novels with customizable voice, rate, pitch, and volume
 
 ## Installation
 
@@ -27,6 +28,7 @@ A Chrome extension that enhances your web novel reading experience with advanced
 4. Your settings will be automatically applied
 5. The extension will remember your reading position when you return
 6. With Dictionary Lookup enabled, hover over any word to see its definition
+7. With Text-to-Speech enabled, use the floating player controls to listen to content
 
 ## Next Steps
 
@@ -43,4 +45,6 @@ Future enhancement plans:
 
 Feel free to submit issues or pull requests if you have ideas for improvements or bug fixes.
 
+## License
 
+MIT License

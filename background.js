@@ -13,7 +13,12 @@ chrome.runtime.onInstalled.addListener(() => {
     autoScroll: false,
     autoScrollSpeed: 2,
     dictionaryEnabled: false,
-    dictionaryTheme: 'light'
+    dictionaryTheme: 'light',
+    ttsEnabled: false,
+    ttsVoice: 'default',
+    ttsRate: 1.0,
+    ttsPitch: 1.0,
+    ttsVolume: 1.0
   });
 });
 

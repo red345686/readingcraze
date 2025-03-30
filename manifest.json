@@ -19,7 +19,7 @@
     "content_scripts": [
       {
         "matches": ["*://*/*"],
-        "js": ["content.js", "dictionary.js"],
+        "js": ["content.js", "dictionary.js", "tts.js"],
         "css": ["styles.css"]
       }
     ],
