@@ -43,6 +43,4 @@ Future enhancement plans:
 
 Feel free to submit issues or pull requests if you have ideas for improvements or bug fixes.
 
-## License
 
-MIT License
