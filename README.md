@@ -9,6 +9,7 @@ A Chrome extension that enhances your web novel reading experience with advanced
 - **Reading Progress**: Automatically tracks your reading progress across sites
 - **Auto-Scroll**: Hands-free reading with adjustable scroll speed
 - **Global Styling**: Changes apply to the entire page for a consistent reading experience
+- **Dictionary Lookup**: Hover over unfamiliar words to see definitions (uses the Free Dictionary API)
 
 ## Installation
 
@@ -25,13 +26,13 @@ A Chrome extension that enhances your web novel reading experience with advanced
 3. Navigate to your favorite web novel site
 4. Your settings will be automatically applied
 5. The extension will remember your reading position when you return
+6. With Dictionary Lookup enabled, hover over any word to see its definition
 
 ## Next Steps
 
 Future enhancement plans:
 
 - Customizable keyboard shortcuts
-- Dictionary lookup for unfamiliar words
 - Translation integration
 - Cloud sync for reading progress
 - Chapter navigation tools

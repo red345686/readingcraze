@@ -42,6 +42,18 @@
         <h3>Features</h3>
         <label><input type="checkbox" id="autoScroll"> Auto Scroll</label>
         <label>Auto Scroll Speed: <input type="range" id="autoScrollSpeed" min="1" max="10" step="1" disabled> <span id="autoScrollSpeedValue">2</span></label>
+        
+        <label><input type="checkbox" id="dictionaryEnabled"> Dictionary Lookup</label>
+        <div class="dictionary-options">
+            <label class="radio-label">
+                <input type="radio" name="dictionaryTheme" id="dictionaryLight" value="light" checked> Light
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="dictionaryTheme" id="dictionaryDark" value="dark"> Dark
+            </label>
+        </div>
+        <div class="tooltip-info">Hover over words to see definitions</div>
+        
         <button id="resetProgress">Reset Reading Progress</button>
     </div>
     

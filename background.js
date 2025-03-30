@@ -11,7 +11,9 @@ chrome.runtime.onInstalled.addListener(() => {
     sideMargin: 20,
     readingMode: 'light',
     autoScroll: false,
-    autoScrollSpeed: 2
+    autoScrollSpeed: 2,
+    dictionaryEnabled: false,
+    dictionaryTheme: 'light'
   });
 });
 

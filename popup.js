@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'sideMargin', 
         'readingMode',
         'autoScroll',
-        'autoScrollSpeed'
+        'autoScrollSpeed',
+        'dictionaryEnabled',
+        'dictionaryTheme'
     ], (settings) => {
         // Set initial values in form
         document.getElementById('font').value = settings.font || 'Georgia, serif';
@@ -29,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('autoScroll').checked = settings.autoScroll || false;
         document.getElementById('autoScrollSpeed').value = settings.autoScrollSpeed || 2;
         document.getElementById('autoScrollSpeedValue').textContent = settings.autoScrollSpeed || 2;
+        document.getElementById('dictionaryEnabled').checked = settings.dictionaryEnabled || false;
+        
+        // Set dictionary theme radio buttons
+        const dictionaryTheme = settings.dictionaryTheme || 'light';
+        document.getElementById('dictionaryLight').checked = dictionaryTheme === 'light';
+        document.getElementById('dictionaryDark').checked = dictionaryTheme === 'dark';
         
         // Enable/disable auto scroll speed based on checkbox
         document.getElementById('autoScrollSpeed').disabled = !settings.autoScroll;
@@ -78,6 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Save all settings to storage
 function saveSettings() {
+    // Get selected dictionary theme
+    let dictionaryTheme = 'light';
+    if (document.getElementById('dictionaryDark').checked) {
+        dictionaryTheme = 'dark';
+    }
+    
     const settings = {
         font: document.getElementById('font').value,
         fontSize: parseInt(document.getElementById('fontSize').value),
@@ -88,14 +102,24 @@ function saveSettings() {
         sideMargin: parseInt(document.getElementById('sideMargin').value),
         readingMode: document.getElementById('readingMode').value,
         autoScroll: document.getElementById('autoScroll').checked,
-        autoScrollSpeed: parseInt(document.getElementById('autoScrollSpeed').value)
+        autoScrollSpeed: parseInt(document.getElementById('autoScrollSpeed').value),
+        dictionaryEnabled: document.getElementById('dictionaryEnabled').checked,
+        dictionaryTheme: dictionaryTheme
     };
 
     chrome.storage.sync.set(settings, () => {
         // Get active tab and apply changes immediately
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
             if (tabs[0]) {
+                // Send style settings
                 chrome.tabs.sendMessage(tabs[0].id, {action: 'applySettings', settings});
+                
+                // Send dictionary settings
+                chrome.tabs.sendMessage(tabs[0].id, {
+                    action: 'updateDictionary', 
+                    enabled: settings.dictionaryEnabled,
+                    theme: settings.dictionaryTheme
+                });
             }
         });
         
@@ -125,7 +149,9 @@ function resetToDefaults() {
             sideMargin: 20,
             readingMode: 'light',
             autoScroll: false,
-            autoScrollSpeed: 2
+            autoScrollSpeed: 2,
+            dictionaryEnabled: false,
+            dictionaryTheme: 'light'
         };
         
         // Update UI
@@ -145,6 +171,9 @@ function resetToDefaults() {
         document.getElementById('autoScrollSpeed').value = defaultSettings.autoScrollSpeed;
         document.getElementById('autoScrollSpeedValue').textContent = defaultSettings.autoScrollSpeed;
         document.getElementById('autoScrollSpeed').disabled = !defaultSettings.autoScroll;
+        document.getElementById('dictionaryEnabled').checked = defaultSettings.dictionaryEnabled;
+        document.getElementById('dictionaryLight').checked = true;
+        document.getElementById('dictionaryDark').checked = false;
         
         // Save to storage
         chrome.storage.sync.set(defaultSettings);
