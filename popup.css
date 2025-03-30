@@ -1,0 +1,108 @@
+body {
+    width: 320px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 15px;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #4285f4;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+h3 {
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.setting-group {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+label span {
+    min-width: 40px;
+    text-align: right;
+    color: #666;
+}
+
+input[type="range"] {
+    width: 140px;
+    margin: 0 10px;
+}
+
+input[type="color"] {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+select {
+    flex: 1;
+    margin-left: 10px;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #4285f4;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #3367d6;
+}
+
+#resetProgress {
+    background-color: #f1f1f1;
+    color: #666;
+    width: 100%;
+}
+
+#resetProgress:hover {
+    background-color: #e0e0e0;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.actions button {
+    flex: 1;
+}
+
+#reset {
+    background-color: #f1f1f1;
+    color: #666;
+}
+
+#reset:hover {
+    background-color: #e0e0e0;
+}

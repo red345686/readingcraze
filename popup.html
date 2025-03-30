@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reading Craze</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <h2>Reading Craze</h2>
+    
+    <div class="setting-group">
+        <h3>Text</h3>
+        <label>Font:
+            <select id="font">
+                <option value="Georgia, serif">Georgia</option>
+                <option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif">Palatino</option>
+                <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Segoe UI</option>
+                <option value="'Noto Serif', serif">Noto Serif</option>
+                <option value="'Merriweather', serif">Merriweather</option>
+                <option value="'Roboto Slab', serif">Roboto Slab</option>
+            </select>
+        </label>
+        <label>Font Size: <input type="range" id="fontSize" min="12" max="28" step="1"> <span id="fontSizeValue">18px</span></label>
+        <label>Font Color: <input type="color" id="fontColor"></label>
+        <label>Line Height: <input type="range" id="lineHeight" min="1.2" max="3.0" step="0.1"> <span id="lineHeightValue">1.8</span></label>
+        <label>Paragraph Spacing: <input type="range" id="paragraphSpacing" min="0.5" max="3.0" step="0.1"> <span id="paragraphSpacingValue">1.5</span></label>
+    </div>
+    
+    <div class="setting-group">
+        <h3>Layout</h3>
+        <label>Background Color: <input type="color" id="bgColor"></label>
+        <label>Side Margins: <input type="range" id="sideMargin" min="0" max="100" step="5"> <span id="sideMarginValue">20px</span></label>
+        <label>Reading Mode: 
+            <select id="readingMode">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="sepia">Sepia</option>
+            </select>
+        </label>
+    </div>
+    
+    <div class="setting-group">
+        <h3>Features</h3>
+        <label><input type="checkbox" id="autoScroll"> Auto Scroll</label>
+        <label>Auto Scroll Speed: <input type="range" id="autoScrollSpeed" min="1" max="10" step="1" disabled> <span id="autoScrollSpeedValue">2</span></label>
+        <button id="resetProgress">Reset Reading Progress</button>
+    </div>
+    
+    <div class="actions">
+        <button id="save">Save Settings</button>
+        <button id="reset">Reset to Default</button>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
